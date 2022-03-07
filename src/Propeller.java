@@ -1,25 +1,44 @@
 public class Propeller {
-    private int powerPropeller;
-    private int currentPower= 0;
+    private int maxPower;
+    private int currentPower = 0;
 
 
-
-    public Propeller(int powerPropeller) {
-        this.powerPropeller = powerPropeller;
+    public Propeller(int powerPropeller) throws Exception {
+        checkValidPowerPropeller(powerPropeller);
+        this.maxPower = powerPropeller;
     }
 
-    public int getPowerPropeller() {
-        return powerPropeller;
+    private void checkValidPowerPropeller(int powerPropeller) throws Exception {
+        if(powerPropeller<=0) throw new Exception("La potencia máxima debe ser mayor a cero");
     }
 
-    public void setPowerPropeller(int powerPropeller) {
-        this.powerPropeller = powerPropeller;
+    public int getMaxPower() {
+        return maxPower;
     }
+
+
+    public int getCurrentPower() {
+        return currentPower;
+    }
+
+
+    public void slowDown() {
+        if ((currentPower + 10) > 0) {
+            currentPower -= 10;
+        }
+    }
+
+    public void accelerate() {
+        if ((currentPower + 10) <= maxPower) {
+            currentPower += 10;
+        }
+    }
+
 
     @Override
     public String toString() {
         return " " +
-                " " + powerPropeller +
+                " " + maxPower +
                 " ";
     }
 }
