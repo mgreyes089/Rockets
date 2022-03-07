@@ -1,21 +1,29 @@
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Rocket {
     protected String codeRocket;
-    protected int numPropellers;
+    protected List<Propeller> propellers = new ArrayList<>();
 
-    public Rocket(String codeRocket, int numPropellers) {
+    public Rocket(String codeRocket) {
         this.codeRocket = codeRocket;
-        this.numPropellers = numPropellers;
+
+    }
+
+    public List<Propeller>getPropellerList (){
+        return propellers;
+    }
+
+    public void addPropeller (int powerPropeller){
+        Propeller propeller = new Propeller (powerPropeller);
+        propellers.add(propeller);
     }
 
     @Override
     public String toString() {
-        return "Rocket{" +
-                "codeRocket='" + codeRocket + '\'' +
-                ", numPropellers=" + numPropellers +
-                '}';
+        return " " +
+                " " + codeRocket + '\'' +
+                ": " + propellers +
+                " ";
     }
-
-
 }
