@@ -7,7 +7,11 @@ public class Main {
 
         acelerate(rockets.get(0),3);
         acelerate(rockets.get(1),3);
-        showTotalPower (rockets);
+        slowDown(rockets.get(0),5);
+        acelerate(rockets.get(1),7);
+        acelerate(rockets.get(0),15);
+        acelerate(rockets.get(1),15);
+
 
     }
 
@@ -50,11 +54,14 @@ public class Main {
         for (int i = 0; i < timesToAcelerate; i++) {
             rocket.accelerate();
         }
+        System.out.println(rocket.codeRocket + ":" + rocket.getCurrentPower() + "\n");
 
     }
-   /* private static void slowDown (Rocket rocket, int timesToSlowDown){
+    private static void slowDown (Rocket rocket, int timesToSlowDown){
         for (int i = 0; i < timesToSlowDown; i++) {
-        rocket.slowDown();
-    }*/
+            rocket.slowDown();
+        }
+        System.out.println(rocket.codeRocket + ":" + rocket.getCurrentPower() + "\n");
 
+    }
 }

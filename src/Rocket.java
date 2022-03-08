@@ -19,11 +19,16 @@ public class Rocket {
         propellers.add(propeller);
     }
 
-    public int getCurrentPower (){
-        int result = 0;
+    public String getCurrentPower (){
+        String result = "";
+        int addAllCurrentPower = 0;
+        int i=1;
         for (Propeller propeller: propellers)     {
-            result += propeller.getCurrentPower();
+            result += propeller.getCurrentPower() + ",";
+            i++;
+            addAllCurrentPower += propeller.getCurrentPower();
         }
+        result = result + "La potencia total de los propulsores suma: " + addAllCurrentPower;
         return result;
     }
 
