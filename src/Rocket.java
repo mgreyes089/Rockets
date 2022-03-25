@@ -19,7 +19,7 @@ public class Rocket {
         propellers.add(propeller);
     }
 
-    public String getCurrentPower (){
+    public String showPropellersStatus (){
         String result = "";
         int addAllCurrentPower = 0;
         int i=1;

@@ -23,14 +23,16 @@ public class Propeller {
 
 
     public void slowDown() {
-        if ((currentPower + 10) > 0) {
-            currentPower -= 10;
+        currentPower -= 10;
+        if (currentPower < 0) {
+            currentPower=0;
         }
     }
 
     public void accelerate() {
-        if ((currentPower + 10) <= maxPower) {
-            currentPower += 10;
+        currentPower += 10;
+        if (currentPower > maxPower) {
+            currentPower=maxPower;
         }
     }
 

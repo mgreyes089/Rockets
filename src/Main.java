@@ -5,12 +5,12 @@ public class Main {
         List<Rocket>rockets = createRockets();
         System.out.println(rockets);
 
-        acelerate(rockets.get(0),3);
-        acelerate(rockets.get(1),3);
+        accelerate(rockets.get(0),3);
+        accelerate(rockets.get(1),3);
         slowDown(rockets.get(0),5);
-        acelerate(rockets.get(1),7);
-        acelerate(rockets.get(0),15);
-        acelerate(rockets.get(1),15);
+        accelerate(rockets.get(1),7);
+        accelerate(rockets.get(0),15);
+        accelerate(rockets.get(1),15);
 
 
     }
@@ -31,7 +31,7 @@ public class Main {
 
     }
     private static void showTotalPower (Rocket rocket){
-        System.out.println("La potencia total actual es: "+ rocket.getCurrentPower());
+        System.out.println("La potencia total actual es: "+ rocket.showPropellersStatus());
     }
 
 
@@ -50,18 +50,18 @@ public class Main {
         rocket1.addPropeller(80);
     }
 
-    private static void acelerate (Rocket rocket, int timesToAcelerate){
+    private static void accelerate(Rocket rocket, int timesToAcelerate){
         for (int i = 0; i < timesToAcelerate; i++) {
             rocket.accelerate();
         }
-        System.out.println(rocket.codeRocket + ":" + rocket.getCurrentPower() + "\n");
+        System.out.println(rocket.codeRocket + ":" + rocket.showPropellersStatus() + "\n");
 
     }
     private static void slowDown (Rocket rocket, int timesToSlowDown){
         for (int i = 0; i < timesToSlowDown; i++) {
             rocket.slowDown();
         }
-        System.out.println(rocket.codeRocket + ":" + rocket.getCurrentPower() + "\n");
+        System.out.println(rocket.codeRocket + ":" + rocket.showPropellersStatus() + "\n");
 
     }
 }
